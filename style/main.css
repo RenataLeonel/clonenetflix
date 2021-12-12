@@ -1,0 +1,98 @@
+:root{ /*variáveis*/
+    --vermelho:#E50914;
+    --preta: #141414;
+}
+
+*{ /*asteristico informa que a formatação é para toda a página*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*elementos base*/
+body{
+    background: var(--preta); /*utilizando variável*/
+    font-family:'Times New Roman', Times, serif; /*fonte principal, na ausência desta as seguintes podem substitui-las*/
+    color: white;
+}
+
+header .container{
+    display: flex;
+    flex-direction: row; /*Esse declaração vem como default ao declarar display:flex;*/
+    align-items: center; /*alinha no centro da row de forma vertical*/
+    justify-content: space-between; /*justifica na row de forma horizontal*/
+   
+}
+
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none; /*Tira o sublinhado dos links*/
+    color: #AAA;
+    margin-right: 10px; /*distanciamento à direita*/
+}
+
+header nav a:hover{
+    color: #fff; /*quando o mouse passa no link a cor fica mais destacada*/
+}
+
+/*Série principal*/
+.serie-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('/img/capa.jpeg'); /*deixa o contraste entre a imagem e as palavras, pega a imagem da pasta img*/
+
+    height:400px; /*altura da caixa*/
+    background-size: cover;
+
+    display: flex; /*alinha na row*/
+    flex-direction: column; /*alinha em coluna*/
+    justify-content: center; /*centraliza na coluna*/
+    align-items: flex-start;/*alinhado à esquerda*/
+}
+
+.serie-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 90px; /*distância entre a descrição e os botões*/ 
+}
+
+.serie-principal .titulo{ /*pode usar somente .titulo mas a sugestão é colocar o nome completo para facilitar quando precisar procurar o elemento*/
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.button{
+    background-color: rgba(0,0,0,.50) ;
+    border: none; /*sem borda*/
+    color: white;
+
+    padding: 15px 30px; /*1 valor = todos os lados, 2 valores = 1° para cima e baixo e 2° serão os lados*/
+    margin-right: 15px;
+    font-size: 12px;
+
+    cursor: pointer; /*transforma o cursor em uma mão ao passar pelos botões*/
+    transition:.3s ease all; /*configura a transição de cor do botão*/
+}
+
+.button:hover{ /*faz a transição dacor do botão de preto para branco quando o mouse passa por cima*/
+    background-color: white;
+    color: black;
+}
+
+.button i{ /*button na tag i*/
+    margin-right: 8px; /*espaço de 8px entre o ícone e o nome do botão*/
+}
+
+.container{ /*Afeta as divs que possuem class="container"*/
+    margin-left: 20px;
+}
+
+.serie-principal .container{ /*Afeta a div que possui class="container" apenas da serie-principal*/
+    width: 70%; /*limita esse container à 70% da tela*/
+}
+
